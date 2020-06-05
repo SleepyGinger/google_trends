@@ -1,10 +1,11 @@
 from selenium import webdriver
+from webdriver_manager.chrome import ChromeDriverManager
 import pandas as pd
 from bs4 import BeautifulSoup
 import re
 
-#remember to download chromedriver and locate it here
-driver = webdriver.Chrome(executable_path='/locate/chrome/driver/here/chromedriver')
+driver = webdriver.Chrome(ChromeDriverManager().install())
+#driver = webdriver.Chrome(executable_path='/locate/chrome/driver/here/chromedriver')
 
 driver.get('https://trends.google.com/trends/trendingsearches/daily?geo=US')
 
